@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/forozonasegura/static/css/main.930b952e.css",
+    "main.js": "/forozonasegura/static/js/main.f6ef6380.js",
+    "index.html": "/forozonasegura/index.html",
+    "main.930b952e.css.map": "/forozonasegura/static/css/main.930b952e.css.map",
+    "main.f6ef6380.js.map": "/forozonasegura/static/js/main.f6ef6380.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.930b952e.css",
+    "static/js/main.f6ef6380.js"
+  ]
+}
