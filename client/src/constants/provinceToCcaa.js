@@ -1,0 +1,62 @@
+import { slugify } from '../utils/slug';
+
+export const PROVINCE_TO_CCAA_SLUG = {
+  almeria: 'andalucia',
+  cadiz: 'andalucia',
+  cordoba: 'andalucia',
+  granada: 'andalucia',
+  huelva: 'andalucia',
+  jaen: 'andalucia',
+  malaga: 'andalucia',
+  sevilla: 'andalucia',
+  huesca: 'aragon',
+  teruel: 'aragon',
+  zaragoza: 'aragon',
+  asturias: 'asturias',
+  baleares: 'islas-baleares',
+  'las-palmas': 'canarias',
+  'santa-cruz-de-tenerife': 'canarias',
+  cantabria: 'cantabria',
+  albacete: 'castilla-la-mancha',
+  'ciudad-real': 'castilla-la-mancha',
+  cuenca: 'castilla-la-mancha',
+  guadalajara: 'castilla-la-mancha',
+  toledo: 'castilla-la-mancha',
+  avila: 'castilla-y-leon',
+  burgos: 'castilla-y-leon',
+  leon: 'castilla-y-leon',
+  palencia: 'castilla-y-leon',
+  salamanca: 'castilla-y-leon',
+  segovia: 'castilla-y-leon',
+  soria: 'castilla-y-leon',
+  valladolid: 'castilla-y-leon',
+  zamora: 'castilla-y-leon',
+  barcelona: 'cataluna',
+  girona: 'cataluna',
+  lleida: 'cataluna',
+  tarragona: 'cataluna',
+  alicante: 'comunidad-valenciana',
+  castellon: 'comunidad-valenciana',
+  valencia: 'comunidad-valenciana',
+  badajoz: 'extremadura',
+  caceres: 'extremadura',
+  'la-coruna': 'galicia',
+  lugo: 'galicia',
+  ourense: 'galicia',
+  pontevedra: 'galicia',
+  madrid: 'comunidad-de-madrid',
+  murcia: 'region-de-murcia',
+  navarra: 'comunidad-foral-de-navarra',
+  alava: 'pais-vasco',
+  guipuzcoa: 'pais-vasco',
+  vizcaya: 'pais-vasco',
+  'la-rioja': 'la-rioja',
+  ceuta: 'ceuta',
+  melilla: 'melilla'
+};
+
+export const resolveCcaaSlugByProvincia = (provinciaLike) => {
+  const key = slugify(provinciaLike || '');
+  return PROVINCE_TO_CCAA_SLUG[key] || '';
+};
+

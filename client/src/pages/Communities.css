@@ -1,0 +1,117 @@
+.communities h1 {
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.page-subtitle {
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.communities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.community-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.1);
+  transition: all 0.3s ease;
+  color: inherit;
+}
+
+.community-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(124, 58, 237, 0.2);
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+.community-card h2 {
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.community-card p {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+  font-size: 1.125rem;
+}
+
+.error-message {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(239, 68, 68, 0.1);
+  border: 2px solid #fee2e2;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.error-message p {
+  color: #991b1b;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.error-hint {
+  color: #6b7280 !important;
+  font-size: 0.875rem !important;
+  margin-top: 1rem;
+}
+
+.error-hint code {
+  background: #f3f4f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #7c3aed;
+}
+
+.no-communities {
+  background: white;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.1);
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.no-communities p {
+  color: #6b7280;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.no-communities .hint {
+  color: #4b5563;
+  font-size: 0.875rem;
+  margin-top: 1.5rem;
+}
+
+.no-communities code {
+  background: #f3f4f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #7c3aed;
+}
+

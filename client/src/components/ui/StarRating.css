@@ -1,0 +1,37 @@
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.star-rating-stars {
+  display: inline-flex;
+  gap: 0.15rem;
+}
+
+.star-rating-star {
+  position: relative;
+  display: inline-flex;
+}
+
+.star-rating-star-base path {
+  fill: #e5e7eb;
+}
+
+.star-rating-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.star-rating-star-fill path {
+  fill: #f59e0b;
+}
+
+.star-rating-value {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6b7280;
+}

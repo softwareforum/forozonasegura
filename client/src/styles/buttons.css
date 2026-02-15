@@ -1,0 +1,104 @@
+.btn {
+  --btn-bg: transparent;
+  --btn-color: #1f2937;
+  --btn-border: transparent;
+  --btn-hover-bg: transparent;
+  --btn-hover-color: #111827;
+  --btn-hover-border: transparent;
+  --btn-shadow: none;
+  --btn-hover-shadow: none;
+  --btn-focus-ring: rgba(124, 58, 237, 0.38);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--btn-border);
+  border-radius: 10px;
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  box-shadow: var(--btn-shadow);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.btn:hover {
+  background: var(--btn-hover-bg);
+  color: var(--btn-hover-color);
+  border-color: var(--btn-hover-border);
+  box-shadow: var(--btn-hover-shadow);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-focus-ring), var(--btn-hover-shadow);
+}
+
+.btn:disabled,
+.btn[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn--primary {
+  --btn-bg: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  --btn-color: #ffffff;
+  --btn-border: #6d28d9;
+  --btn-hover-bg: linear-gradient(135deg, #6d28d9 0%, #5b21b6 100%);
+  --btn-hover-color: #ffffff;
+  --btn-hover-border: #5b21b6;
+  --btn-shadow: 0 6px 14px rgba(91, 33, 182, 0.24);
+  --btn-hover-shadow: 0 8px 20px rgba(91, 33, 182, 0.32);
+}
+
+.btn--secondary {
+  --btn-bg: #ffffff;
+  --btn-color: #5b21b6;
+  --btn-border: #7c3aed;
+  --btn-hover-bg: #f5f3ff;
+  --btn-hover-color: #4c1d95;
+  --btn-hover-border: #6d28d9;
+  --btn-shadow: 0 3px 8px rgba(91, 33, 182, 0.12);
+  --btn-hover-shadow: 0 6px 14px rgba(91, 33, 182, 0.2);
+}
+
+.btn--ghost {
+  --btn-bg: rgba(255, 255, 255, 0.12);
+  --btn-color: #ffffff;
+  --btn-border: rgba(255, 255, 255, 0.38);
+  --btn-hover-bg: rgba(255, 255, 255, 0.2);
+  --btn-hover-color: #ffffff;
+  --btn-hover-border: rgba(255, 255, 255, 0.62);
+  --btn-shadow: 0 4px 10px rgba(17, 24, 39, 0.14);
+  --btn-hover-shadow: 0 7px 16px rgba(17, 24, 39, 0.22);
+  --btn-focus-ring: rgba(255, 255, 255, 0.5);
+}
+
+.btn--sm {
+  min-height: 38px;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.btn--lg {
+  min-height: 48px;
+  padding: 0.85rem 1.4rem;
+  font-size: 1rem;
+}
+
+.btn--nav {
+  min-width: 112px;
+}
+
