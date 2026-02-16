@@ -9,6 +9,8 @@
     "init-communities": "node scripts/initCommunities.js",
     "recalculate-quality-scores": "node scripts/recalculatePostQualityScores.js",
     "recalculate-ratings": "node scripts/recalcRatings.js",
+    "cleanup:demo": "node scripts/cleanup-demo-data.js",
+    "anonymize": "node scripts/anonymize-data.js",
     "test": "jest --runInBand"
   },
   "dependencies": {

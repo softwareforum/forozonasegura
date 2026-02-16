@@ -12,14 +12,39 @@ const { securityRequestLogger } = require('./middleware/securityRequestLogger');
 const { publicLimiter, getOnly, getRateLimiterStatus } = require('./middleware/rateLimiters');
 
 const app = express();
-const trustProxy = process.env.TRUST_PROXY === '1' || process.env.TRUST_PROXY === 'true';
+const isProduction = process.env.NODE_ENV === 'production';
+const trustProxyFromEnv = process.env.TRUST_PROXY === '1' || process.env.TRUST_PROXY === 'true';
+const trustProxy = isProduction || trustProxyFromEnv;
 if (trustProxy) {
   app.set('trust proxy', 1);
 }
 
+const parseAllowedOrigins = () =>
+  String(process.env.CORS_ORIGINS || '')
+    .split(',')
+    .map((origin) => origin.trim())
+    .filter(Boolean);
+
+const configuredOrigins = parseAllowedOrigins();
+const devDefaultOrigins = ['http://localhost:3000'];
+const allowedOrigins = isProduction
+  ? configuredOrigins
+  : Array.from(new Set([...devDefaultOrigins, ...configuredOrigins]));
+
+const corsOriginValidator = (origin, callback) => {
+  // Allow non-browser requests (curl/postman/server-to-server)
+  if (!origin) return callback(null, true);
+
+  if (allowedOrigins.includes(origin)) {
+    return callback(null, true);
+  }
+
+  return callback(new Error('CORS origin not allowed'));
+};
+
 app.use(helmet());
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  origin: corsOriginValidator,
   credentials: true
 }));
 app.use(express.json({ limit: '10mb' }));
@@ -65,7 +90,11 @@ app.use('/api/professional-resources', getOnly(publicLimiter), require('./routes
 app.use('/api/moderation', require('./routes/moderation'));
 
 app.get('/api/health', (_req, res) => {
-  res.json({ status: 'OK', message: 'Foro Zona Segura API' });
+  res.json({
+    success: true,
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString()
+  });
 });
 
 if (process.env.NODE_ENV !== 'production' && process.env.DEBUG_ENDPOINTS === 'true') {
